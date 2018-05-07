@@ -9,6 +9,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'puma', '~> 3.11'
 gem 'sqlite3'
 
+gem 'devise'
+gem 'devise-bootstrap-views', github: 'hisea/devise-bootstrap-views', branch: 'bootstrap4'
+
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
