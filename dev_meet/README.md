@@ -59,3 +59,42 @@ Proposta de Funcionalidades extras:
   - Grupo pode ter vários eventos.
   - Um evento pertence a um grupo (não mais a um usuário).
 - Adicionar um mapa com a localização do evento na tela de detalhes do evento.
+* ...
+
+## Deploy
+
+# Deploy heroku
+
+Antes de iniciar é necessário ter uma conta no [heroku](www.heroku.com) e o [aplicativo](https://devcenter.heroku.com/articles/getting-started-with-ruby#set-up) instalado na máquina.
+
+Também tenha certeza te ter modificado o Gemfile para usar o postgres no lugar do sqlite:
+
+```diff
+-gem 'sqlite3'
++gem 'pg 0.18.4'
+```
+
+A apartir de agora, podemos executar os comandos do heroku:
+
+```bash
+# Logar no heroku com sua conta
+$ heroku login
+
+# Criar o aplicativo no heroku
+$ heroku create
+=> Creating polar-inlet-4930... done, stack is cedar-14
+
+# Verificar se o remote do heroku foi adicionado no Git
+$ git remote -v
+=> heroku  https://git.heroku.com/enigmatic-coast-71324.git (fetch)
+=> heroku  https://git.heroku.com/enigmatic-coast-71324.git (push)
+
+# Deploy no heroku
+$ git push heroku master
+
+# Rodar as migrations no heroku
+$ heroku run rails db:migrate --app [my-app]
+```
+
+Mais informações:
+https://devcenter.heroku.com/articles/getting-started-with-ruby#deploy-the-app
