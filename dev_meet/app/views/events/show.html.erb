@@ -6,5 +6,19 @@
 
 <p><%= @event.description %></p>
 
-<%= link_to "Editar evento", edit_event_path(@event), class: 'btn btn-primary' %>
-<%= link_to "Apagar evento", @event, method: :delete, class: 'btn btn-danger' %>
+<p>
+  <%= link_to "Editar evento", edit_event_path(@event), class: 'btn btn-primary' %>
+  <%= link_to "Apagar evento", @event, method: :delete, class: 'btn btn-danger' %>
+</p>
+
+<h2>Participantes:</h2>
+
+<% @event.attendants.each do |attendant| %>
+  <p><strong>Email:</strong> <%= attendant.email %></p>
+<% end %>
+
+<% if @event.attended_by?(current_user) %>
+  <p>Você está inscrito</p>
+<% else %>
+  <p><%= link_to 'Me inscrever', event_attendants_path(@event), method: :create, class: 'btn btn-success'  %></p>
+<% end %>
