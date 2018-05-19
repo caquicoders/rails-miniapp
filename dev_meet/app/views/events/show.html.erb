@@ -1,0 +1,13 @@
+<h1>Evento: <%= @event.name %></h1>
+
+<p>Data: <%= @event.date.strftime("%d/%m/%Y") %></p>
+
+<p>Local: <%= @event.location %></p>
+
+<p><%= @event.description %></p>
+
+<% if @event.owned_by?(current_user) %>
+  <%= link_to "Editar", edit_event_path(@event), class: "btn btn-primary" %>
+  <%= link_to "Apagar", @event, method: :delete, class: "btn btn-danger" %>
+<% end %>
+
