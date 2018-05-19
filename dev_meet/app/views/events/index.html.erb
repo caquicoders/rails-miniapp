@@ -1,0 +1,23 @@
+<h2>Eventos</h2>
+
+<div class="form-group">
+  <%= link_to 'Criar evento', new_event_path, class: 'btn btn-primary' %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data</th>
+      <th>Local</th>
+    </tr>
+  </thead>
+
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= link_to event.name, event %></td>
+      <td><%= event.date.strftime("%d/%m/%Y")  %></td>
+      <td><%= event.location %></td>
+    </tr>
+  <% end -%>
+</table>
