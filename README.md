@@ -29,7 +29,7 @@ Confira a versão final do mini-app: https://devmeet-rails.herokuapp.com/
 
 [Felipe Renan](https://github.com/feliperenan)
 
-[Lucas Santos](https://github.com/souumlucas)
+[Lucas Santos](https://github.com/lslm)
 
 ## Apoio
 
