@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/home', to: 'home#index'
 
-  root to: "home#index"
+  resources :events do
+    resources :attendants, only: [:create]
+  end
+
+  get '/home', to: 'home#index'
+  root to: "events#index"
 end
